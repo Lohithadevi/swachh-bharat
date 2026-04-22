@@ -1,0 +1,18 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f0f4f8;
+  color: #333;
+  line-height: 1.5;
+}
+
+a { text-decoration: none; }
+
+button { font-family: inherit; }
+
+input, select, textarea { font-family: inherit; }

@@ -1,0 +1,25 @@
+# Environment variables — NEVER commit these
+.env
+.env.local
+.env.production
+.env.*
+
+# Dependencies
+node_modules/
+
+# Uploaded files — stored locally, not for git
+uploads/*
+!uploads/.gitkeep
+
+# Debug scripts — not needed in production
+checkData.js
+fixAssign.js
+
+# Logs
+server.log
+*.log
+logs/
+
+# OS files
+.DS_Store
+Thumbs.db
