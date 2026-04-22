@@ -18,8 +18,12 @@ app.use('/api/messages', require('./routes/messages'));
 
 // Serve React frontend in production
 const frontendBuild = path.join(__dirname, '..', 'frontend', 'build');
-app.use(express.static(frontendBuild));
+app.use((req, res, next) => {
+  if (req.path.startsWith('/api') || req.path.startsWith('/uploads')) return next();
+  express.static(frontendBuild)(req, res, next);
+});
 app.get('*splat', (req, res) => {
+  if (req.path.startsWith('/api')) return res.status(404).json({ message: 'Not found' });
   res.sendFile(path.join(frontendBuild, 'index.html'));
 });
 
