@@ -8,7 +8,7 @@ const { protect, requireRole } = require('../middleware/auth');
 
 const router = express.Router();
 
-// Get all complaints in head's jurisdiction
+// Get all the complaints in head's jurisdiction
 router.get('/complaints', protect, requireRole('head'), async (req, res) => {
   try {
     const { state, district, taluk } = req.user;
